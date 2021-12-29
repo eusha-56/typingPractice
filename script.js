@@ -112,8 +112,8 @@ inputField.onkeydown = function (){
   }
 }
 
-inputField.onkeyup = function () {
-  currentLetter = inputField.value
+inputField.onkeyup = function (e) {
+  currentLetter = e.key
   inputField.value = null
   if (currentLetter === ' ') {
     spacePressed()
