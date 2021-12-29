@@ -36,7 +36,6 @@ let currentLetter = ""
 let currentTypedWord = ""
 let currentWord = ""
 let lineThrough = false
-let letters = "abcdefghijklmnopqrstuvwxyz".split("")
 let correctWordCount = 0
 let wrongWordCount = 0
 let totalWordCount = 0
@@ -113,9 +112,9 @@ inputField.onkeydown = function (){
   }
 }
 
-inputField.onkeyup = function (e) {
+inputField.onkeyup = function () {
+  currentLetter = inputField.value
   inputField.value = null
-  currentLetter = e.key
   if (currentLetter === ' ') {
     spacePressed()
   }else if (regex.test(currentLetter)){
